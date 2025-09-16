@@ -28,10 +28,18 @@ const postsCollection = defineCollection({
 		nextSlug: z.string().default(""),
 	}),
 });
-const specCollection = defineCollection({
-	schema: z.object({}),
-});
-export const collections = {
-	posts: postsCollection,
-	spec: specCollection,
+
+// 定义站点语言
+const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
+
+
+export const siteConfig: SiteConfig = {
+	title: "宿尘jy_tut",        // 网站标题
+	subtitle: "AncientDust_jy_tut",  // 网站副标题
+	lang: SITE_LANG,         // 不需要配置，会根据 SITE_LANG 自动设置
+}
 };
+themeColor: {
+	hue: 0,     // 主题色的色相值，范围 0-360
+		fixed: false, // 是否隐藏访客的主题色选择器
+},
